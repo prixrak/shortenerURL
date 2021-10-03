@@ -14,8 +14,6 @@ authRouter.post("/register",
   ],
   async (req, res) => {
     try {
-
-      console.log(req.body);
       const errors = validationResult(req);
 
       if (!errors.isEmpty()) {
@@ -29,7 +27,7 @@ authRouter.post("/register",
       if (candidate) {
         return res.status(400).json({ message: "This user already exists" });
       }
-      const hashedPassword = await bcrypt.hash(password, 19);
+      const hashedPassword = await bcrypt.hash(password, 12);
       const user = new User({email, password: hashedPassword});
 
       await user.save();
@@ -66,7 +64,7 @@ authRouter.post("/login",
       if (!user) {
         return res.status(400).json({ message: "User is not found" });
       }
-
+      console.log("Finded");
       const isMatch = await bcrypt.compare(password, user.password);
 
       if (!isMatch) {

@@ -4,14 +4,17 @@ import useRoutes from "../routes";
 import useAuth from "../hooks/auth.hook.js"; 
 import AuthContext from "../context/AuthContext";
 import Navbar from "../components/Navbar/Navbar.js";
-
-import "./App.scss";
+import Loader from "../components/Loader/Loader";
 
 function App() {
-  const {token, login, logout, userId} = useAuth();
+  const {token, login, logout, userId, ready} = useAuth();
   const isAuthenticated = !!token; // check if user logined 
   const routes = useRoutes(isAuthenticated);
 
+  // wait until useAuth set correctly data, beacuse it is async 
+  if(!ready) {
+    return <Loader/>
+  }
   return (
     <AuthContext.Provider value={{
       token, login, logout, userId, isAuthenticated

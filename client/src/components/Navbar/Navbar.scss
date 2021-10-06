@@ -3,3 +3,17 @@
   transition: 0.5s;
   color: rgb(206, 88, 88) !important;
 }
+
+@media (min-width: 392px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: space-between;
+    .nav-item {
+      margin-left: 10px;
+    }
+  }
+}

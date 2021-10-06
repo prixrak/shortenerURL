@@ -7,7 +7,7 @@ const LinksList = ({ links }) => {
     return <h1 className="center">No links yet</h1>;
   }
   return (
-    <table class="table caption-top">
+    <table class="table caption-top" >
       <caption className="fs-1">List of Links</caption>
       <thead>
         <tr>

@@ -2,5 +2,5 @@
   "port": 80,
   "mongoUri": "mongodb+srv://arman:1234%24%23%40%21@cluster0.gzami.mongodb.net/app?retryWrites=true&w=majority",
   "jwtSecret": "arman petrosian sigma",
-  "baseUrl": "http://localhost:3333"
+  "baseUrl": "https://shortenerurl1.herokuapp.com"
 }

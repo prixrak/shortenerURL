@@ -27,8 +27,10 @@ const LinksPage = () => {
   }
 
   return (
-    <div className="container">
-      {!loading && links && <LinksList links={links}/>}
+    <div className="table-responsive">
+      <div className="container">
+        {!loading && links && <LinksList links={links}/>}
+      </div>
     </div>
   );
 };

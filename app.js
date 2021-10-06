@@ -4,9 +4,14 @@ import mongoose from "mongoose"; // for DB
 import authRouter from "./routes/auth.routes.js";
 import linkRouter from "./routes/link.routes.js";
 import redirectRoutes from "./routes/redirect.routes.js"; // use for redurecting from shorten url to original
+import path from "path";
 
+const __dirname = path.resolve();
 // get PORT from constants
-const PORT = config.get("port") || 3000;
+let PORT = config.get("port") || 3000;
+if (process.env.NODE_ENV === "production") {
+  const PORT = process.env.PORT || 3000;
+}
 
 const app = express(); 
 
